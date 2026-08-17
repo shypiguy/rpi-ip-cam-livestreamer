@@ -1,7 +1,7 @@
 #!/bin/bash
 
 FLAG_FILE="streaming_flag.txt"
-cd ~/Development/bash_general/live_stream || exit
+cd "$(dirname -- "${BASH_SOURCE[0]}")" || exit
 source .venv/bin/activate
 while true; do
     # 1. Check if the flag file exists. If not, exit the script.
@@ -19,7 +19,7 @@ while true; do
             echo "YouTube reports no data (WARNING). Restarting ffmpeg connection..."
             
             # Gracefully kill the stalled ffmpeg process
-            killall --user bill --ignore-case --signal INT ffmpeg
+            killall --user "$USER" --ignore-case --signal INT ffmpeg
             
             # Wait 5 seconds for the process to fully terminate and free up network ports
             sleep 5
