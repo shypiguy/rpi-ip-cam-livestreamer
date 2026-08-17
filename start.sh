@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # set up python environmnet, run script to create stream container
-cd ~/Development/bash_general/live_stream || exit
+cd "$(dirname -- "${BASH_SOURCE[0]}")" || exit
 
 source .venv/bin/activate
 
