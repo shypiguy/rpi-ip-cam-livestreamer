@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ~/Development/bash_general/live_stream || exit
+cd "$(dirname -- "${BASH_SOURCE[0]}")" || exit
 
 # remove the flag file indicating we don't want streaming to continue
 rm -f streaming_flag.txt
