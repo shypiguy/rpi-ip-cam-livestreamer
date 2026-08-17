@@ -6,7 +6,7 @@ cd "$(dirname -- "${BASH_SOURCE[0]}")" || exit
 rm -f streaming_flag.txt
 
 # end the encoder if it's running
-killall --user bill --ignore-case  --signal INT  ffmpeg
+killall --user "$USER" --ignore-case --signal INT ffmpeg
 
 # set up the python env and run script to close the streaming container
 source .venv/bin/activate
